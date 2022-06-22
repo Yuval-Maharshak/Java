@@ -21,5 +21,23 @@ public class SquareRootWithBabylonianMethod {
         }
         return a;
     }
+    
+    /**
+    * get the value and num of digits accuracy
+    * @param num element
+    * @param acc the number of digits accuracy
+    * @return the square root of num with acc digits accuracy
+    */
+    public static float square_Root(float num, int acc) {
+        float a = num;
+        float b = 1;
+        double e;
+        e = (acc <= 15)? Math.pow(10, acc) : Math.pow(10, 15);   // 15 is the max digits accuracy, right?
+        while(a - b > e) {
+            a = (a + b) / 2;
+            b = num / a;
+        }
+        return a;
+    }
 
 }
